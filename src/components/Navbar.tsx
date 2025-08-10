@@ -55,7 +55,7 @@ const Navbar = () => {
           aria-label="Guardian App"
         >
           <img 
-            src="/lovable-uploads/b16ce318-13c7-4ef6-a2b2-9be8d006dab9.png" 
+            src="/placeholder.svg" 
             alt="Guardian App Logo" 
             className="h-7 sm:h-8" 
           />
