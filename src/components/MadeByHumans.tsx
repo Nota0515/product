@@ -10,9 +10,8 @@ const MadeByHumans = () => {
           backgroundImage: "url('/background-section3.png')"
         }}>
             <div className="flex items-center text-white">
-              <img src="/logo.svg" alt="Pulse Robot Logo" className="h-5 sm:h-6 w-auto mr-3 invert" />
-              <span className="text-white text-xl font-medium">
-            </span>
+              <img src="/lovable-uploads/b16ce318-13c7-4ef6-a2b2-9be8d006dab9.png" alt="Guardian App Logo" className="h-5 sm:h-6 w-auto mr-3" />
+              <span className="text-white text-xl font-medium">Guardian App</span>
             </div>
             
             <div style={{

@@ -52,11 +52,11 @@ const Navbar = () => {
             e.preventDefault();
             scrollToTop();
           }}
-          aria-label="Pulse Robot"
+          aria-label="Guardian App"
         >
           <img 
-            src="/logo.svg" 
-            alt="Pulse Robot Logo" 
+            src="/lovable-uploads/b16ce318-13c7-4ef6-a2b2-9be8d006dab9.png" 
+            alt="Guardian App Logo" 
             className="h-7 sm:h-8" 
           />
         </a>
