@@ -85,10 +85,10 @@ const HumanoidSection = () => {
   return (
     <div 
       ref={sectionRef} 
-      className="relative" 
+      className="relative bg-black" 
       style={{ height: '300vh' }}
     >
-      <section className="w-full h-screen py-10 md:py-16 sticky top-0 overflow-hidden bg-white" id="why-humanoid">
+      <section className="w-full h-screen bg-black text-white py-10 md:py-16 sticky top-0 overflow-hidden" id="why-humanoid">
         <div className="container px-6 lg:px-8 mx-auto h-full flex flex-col">
           <div className="mb-2 md:mb-3">
             <div className="flex items-center gap-4 mb-2 md:mb-2 pt-8 sm:pt-6 md:pt-4">
@@ -100,7 +100,7 @@ const HumanoidSection = () => {
               </div>
             </div>
             
-            <h2 className="section-title text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-1 md:mb-2">
+            <h2 className="section-title text-3xl text-white sm:text-4xl md:text-5xl font-display font-bold mb-1 md:mb-2">
               Choose Guardian?
             </h2>
           </div>

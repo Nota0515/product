@@ -44,7 +44,7 @@ const TestimonialCard = ({
   return <div className="bg-cover bg-center rounded-lg p-8 h-full flex flex-col justify-between text-white transform transition-transform duration-300 hover:-translate-y-2 relative overflow-hidden" style={{
     backgroundImage: `url('${backgroundImage}')`
   }}>
-      <div className="absolute top-0 right-0 w-24 h-24 bg-white z-10"></div>
+      <div className="absolute top-0 right-0 w-24 h-24 bg-black z-10"></div>
       
       <div className="relative z-0">
         <p className="text-xl mb-8 font-medium leading-relaxed pr-20">{`"${content}"`}</p>
@@ -59,7 +59,7 @@ const TestimonialCard = ({
 const Testimonials = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  return <section className="py-12 bg-white relative" id="testimonials" ref={sectionRef}> {/* Reduced from py-20 */}
+  return <section className="py-12 bg-black relative" id="testimonials" ref={sectionRef}> {/* Reduced from py-20 */}
       <div className="section-container opacity-0 animate-on-scroll">
         <div className="flex items-center gap-4 mb-6">
           <div className="pulse-chip">
@@ -68,7 +68,7 @@ const Testimonials = () => {
           </div>
         </div>
         
-        <h2 className="text-5xl font-display font-bold mb-12 text-left">What others say</h2>
+        <h2 className="text-5xl text-white font-display font-bold mb-12 text-left">What others say</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {testimonials.map((testimonial, index) => <TestimonialCard key={index} content={testimonial.content} author={testimonial.author} role={testimonial.role} gradient={testimonial.gradient} backgroundImage={testimonial.backgroundImage} />)}

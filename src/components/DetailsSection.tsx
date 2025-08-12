@@ -36,7 +36,7 @@ const DetailsSection = () => {
       company: ""
     });
   };
-  return <section id="details" className="w-full bg-white py-0">
+  return <section id="details" className="w-full bg-black py-0">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="grid grid-cols-1 gap-6 md:gap-8 lg:grid-cols-2">
           {/* Left Card - The Details */}

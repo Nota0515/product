@@ -1,6 +1,5 @@
 
-import React, { useEffect, useRef, useState } from "react";
-import { cn } from "@/lib/utils";
+import { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import LottieAnimation from "./LottieAnimation";
 
@@ -88,7 +87,7 @@ const Hero = () => {
   
   return (
     <section 
-      className="overflow-hidden relative bg-cover" 
+      className="overflow-hidden relative bg-cover bg-black" 
       id="hero" 
       style={{
         backgroundImage: 'url("/Header-background.webp")',
