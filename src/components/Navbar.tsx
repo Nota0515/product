@@ -40,25 +40,34 @@ const Navbar = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 py-2 sm:py-3 md:py-4 transition-all duration-300",
         isScrolled 
-          ? "bg-white/80 backdrop-blur-md shadow-sm" 
+          ? "bg-black/70 text-white backdrop-blur-xl border-b-slate-700 border-b" 
           : "bg-transparent"
       )}
     >
-      <div className="container flex items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="container flex items-center justify-between  px-4 sm:px-6 lg:px-8">
         <a 
           href="#" 
-          className="flex items-center space-x-2"
+          className="flex items-center "
           onClick={(e) => {
             e.preventDefault();
             scrollToTop();
           }}
           aria-label="Guardian App"
         >
-          <img 
-            src="/placeholder.svg" 
-            alt="Guardian App Logo" 
-            className="h-7 sm:h-8" 
-          />
+          {isScrolled ? (
+            <img 
+              src="/whitelogo.png" 
+              alt="Guardian App Logo" 
+              className="h-7 sm:h-8" 
+            />
+          ) : (
+            <img 
+              src="/logomain.png" 
+              alt="Guardian App Logo" 
+              className="h-7 sm:h-8" 
+            />
+          )}
+          <p className={`relative transition-all duration-300 ${isScrolled ? "text-white" :"text-gray-800"} py-2`}>Guardian</p>
         </a>
 
         {/* Desktop Navigation */}
@@ -89,7 +98,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation - improved for better touch experience */}
       <div className={cn(
-        "fixed inset-0 z-40 bg-white flex flex-col pt-16 px-6 md:hidden transition-all duration-300 ease-in-out",
+        "fixed inset-0 z-40 bg-black text-white flex flex-col pt-16 px-6 md:hidden transition-all duration-300 ease-in-out",
         isMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
       )}>
         <nav className="flex flex-col space-y-8 items-center mt-8">
