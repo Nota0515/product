@@ -14,11 +14,11 @@ const ImageShowcaseSection = () => {
           </p>
         </div>
         
-        <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-elegant mx-auto max-w-4xl animate-on-scroll">
+        <div className="rounded-2xl shadow-[0_0_700px_#3b82f6] sm:rounded-3xl overflow-hidden mx-auto max-w-4xl animate-on-scroll">
           <div className="w-full">
             <img 
-              src="/placeholder.svg" 
-              alt="Advanced humanoid robot with orange and white design" 
+              src="/herosecond.gif" 
+              alt="product gif" 
               className="w-full h-auto object-cover"
             />
           </div>

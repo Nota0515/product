@@ -10,27 +10,27 @@ interface TestimonialProps {
 }
 
 const testimonials: TestimonialProps[] = [{
-  content: "Atlas transformed our production line, handling repetitive tasks while our team focuses on innovation. 30% increase in output within three months.",
-  author: "Sarah Chen",
-  role: "VP of Operations, Axion Manufacturing",
+  content: "Guardian reshaped my DSA prep. Instead of spoon-feeding answers, it pushed me to think deeper. I cracked problems I once thought impossible",
+  author: "Riya Mehta",
+  role: "Computer Science Student, Mumbai University",
   gradient: "from-blue-700 via-indigo-800 to-purple-900",
   backgroundImage: "/background-section1.png"
 }, {
-  content: "Implementing Atlas in our fulfillment centers reduced workplace injuries by 40% while improving order accuracy. The learning capabilities are remarkable.",
-  author: "Michael Rodriguez",
-  role: "Director of Logistics, GlobalShip",
+  content: "Using Guardian for interview prep was a game-changer. It sharpened my problem-solving approach and boosted my confidence. Landed my first tech internship in 2 months.",
+  author: "Arjun Verma",
+  role: "Software Developer Intern, CodeWorks",
   gradient: "from-indigo-900 via-purple-800 to-orange-500",
   backgroundImage: "/background-section2.png"
 }, {
-  content: "Atlas adapted to our lab protocols faster than any system we've used. It's like having another researcher who never gets tired and maintains perfect precision.",
-  author: "Dr. Amara Patel",
-  role: "Lead Scientist, BioAdvance Research",
+  content: "Guardian adapts to how I think and gives me hints that actually make sense. It’s like having a mentor who never gets tired and always knows the next step",
+  author: "Priya Singh",
+  role: "Competitive Programmer, CodeArena",
   gradient: "from-purple-800 via-pink-700 to-red-500",
   backgroundImage: "/background-section3.png"
 }, {
-  content: "As a mid-size business, we never thought advanced robotics would be accessible to us. Atlas changed that equation entirely with its versatility and ease of deployment.",
-  author: "Jason Lee",
-  role: "CEO, Innovative Solutions Inc.",
+  content: "I didn’t think a tool could make me love DSA practice. Guardian proved me wrong—it’s fast, smart, and makes learning addictive.",
+  author: "Karan Patel",
+  role: "Full-Stack Developer, DevHive",
   gradient: "from-orange-600 via-red-500 to-purple-600",
   backgroundImage: "/background-section1.png"
 }];
