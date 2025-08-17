@@ -1,12 +1,14 @@
 
 import React, { useState } from "react";
 import { toast } from "sonner";
+import { supabase } from "@/lib/supabase";
 const DetailsSection = () => {
   const [formData, setFormData] = useState({
-    fullName: "",
+    name: "",
     email: "",
     company: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const {
       name,
@@ -17,24 +19,44 @@ const DetailsSection = () => {
       [name]: value
     }));
   };
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    // Simple validation
-    if (!formData.fullName || !formData.email) {
+    
+    if (!formData.name || !formData.email) {
       toast.error("Please fill in all required fields");
       return;
     }
 
-    // Demo form submission
-    toast.success("Request submitted successfully!");
+    setIsSubmitting(true);
+    
+    try {
+      const { error } = await supabase
+        .from('interest_requests')
+        .insert([
+          { 
+            name: formData.name, 
+            email: formData.email, 
+            company: formData.company || null 
+          },
+        ]);
 
-    // Reset form
-    setFormData({
-      fullName: "",
-      email: "",
-      company: ""
-    });
+      if (error) throw error;
+      
+      toast.success("Request submitted successfully!");
+      
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        company: ""
+      });
+      
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast.error("Failed to submit request. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   return (
     <section id="details" className="w-full bg-black py-0">
@@ -71,10 +93,11 @@ const DetailsSection = () => {
                 <div>
                   <input
                     type="text"
-                    name="fullName"
-                    value={formData.fullName}
+                    name="name"
+                    value={formData.name}
                     onChange={handleChange}
                     placeholder="Full name"
+                    disabled={isSubmitting}
                     className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-pulse-500"
                     required
                   />
@@ -87,8 +110,9 @@ const DetailsSection = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="Email address"
-                    className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-pulse-500"
+                    className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-pulse-500 disabled:opacity-70 disabled:cursor-not-allowed"
                     required
+                    disabled={isSubmitting}
                   />
                 </div>
 
@@ -99,15 +123,17 @@ const DetailsSection = () => {
                     value={formData.company}
                     onChange={handleChange}
                     placeholder="Company (optional)"
-                    className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-pulse-500"
+                    className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-pulse-500 disabled:opacity-70 disabled:cursor-not-allowed"
+                    disabled={isSubmitting}
                   />
                 </div>
 
                 <div>
                   <button
                     type="submit"
-                    className="w-full rounded-full bg-pulse-500 px-6 py-3 font-medium text-white transition-colors duration-300 hover:bg-pulse-600">
-                    Request access
+                    className={`w-full rounded-full bg-pulse-500 px-6 py-3 font-medium text-white transition-colors duration-300 hover:bg-pulse-600 disabled:opacity-70 disabled:cursor-not-allowed ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                    disabled={isSubmitting}>
+                    {isSubmitting ? 'Submitting...' : 'Request access'}
                   </button>
                 </div>
               </form>
