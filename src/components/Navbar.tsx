@@ -71,7 +71,7 @@ const Navbar = () => {
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-8">
+        <nav className={`hidden ${isScrolled ? "text-white" : "text-black"} md:flex space-x-8`}>
           <a 
             href="#" 
             className="nav-link"
